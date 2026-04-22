@@ -1,3 +1,3 @@
 #!/usr/bin/env bun
 
-export {}
+export * from '@opencode-mama/shared'

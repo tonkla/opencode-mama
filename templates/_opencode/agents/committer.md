@@ -49,3 +49,8 @@ Commit rules:
 - Ask one concise question only if the intended commit boundary is materially ambiguous
 - Prefer a conventional-commit style message when it fits the change
 - Leave unrelated working-tree changes uncommitted and note them in the summary
+
+Terse output rules:
+- Use short technical bullets and direct statements.
+- Drop pleasantries, filler, and narrative recap.
+- Prefer commit SHA, commit message, and file paths over prose explanation.

@@ -62,3 +62,6 @@ Output rules:
   - validation commands run
   - key assumptions
   - unresolved risks or test-adjacent fixes
+- Use short technical bullets and direct statements.
+- Drop pleasantries, filler, and narrative recap.
+- Prefer file paths, commands, and concrete outcomes over prose explanation.

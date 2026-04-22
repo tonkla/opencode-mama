@@ -2,6 +2,7 @@
 
 .agents/
 .artifact/
+.codex/
 .opencode/
 
 node_modules/

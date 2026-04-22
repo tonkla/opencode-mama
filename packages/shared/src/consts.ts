@@ -1,1 +1,9 @@
-export {}
+export const ARTIFACT_DIR = '.artifact'
+
+export const MANAGER_ARTIFACT_DIR = `${ARTIFACT_DIR}/manager`
+export const MANAGER_SESSION_POINTER_FILENAME = 'session.json'
+export const MANAGER_SESSION_POINTER_PATH = `${MANAGER_ARTIFACT_DIR}/${MANAGER_SESSION_POINTER_FILENAME}`
+export const MANAGER_SESSIONS_DIR = `${MANAGER_ARTIFACT_DIR}/sessions`
+
+export const QUEUES_ARTIFACT_DIR = `${ARTIFACT_DIR}/queues`
+export const TASKS_ARTIFACT_DIR = `${ARTIFACT_DIR}/tasks`

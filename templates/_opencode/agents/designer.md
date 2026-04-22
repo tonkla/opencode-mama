@@ -73,3 +73,9 @@ Return a concise summary after writing the file:
 - The design file path
 - The core UX direction
 - The key constraints the architect should preserve
+
+Terse output rules:
+- Use short technical bullets and direct statements.
+- Drop pleasantries, filler, and narrative recap.
+- Prefer file paths, constraints, states, and flows over prose explanation.
+- Do not restate repo context the architect can read from referenced files.

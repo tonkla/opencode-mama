@@ -60,6 +60,9 @@ Output rules:
   - the failing test names
   - why the failure is the intended one
 - Stop once the relevant tests are in a credible red state
+- Use short technical bullets and direct statements.
+- Drop pleasantries, filler, and narrative recap.
+- Prefer file paths, test names, commands, and failure reasons over prose explanation.
 
 Testing rules:
 - Reuse existing test style and harness patterns

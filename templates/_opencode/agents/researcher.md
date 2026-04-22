@@ -87,3 +87,9 @@ Return a concise summary after writing the file:
 - The research file path
 - The strongest conclusions
 - The open questions the downstream designer or architect should resolve next
+
+Terse output rules:
+- Use short technical bullets and direct statements.
+- Drop pleasantries, filler, and narrative recap.
+- Prefer file paths, source names, options, and open questions over prose explanation.
+- Do not restate context the downstream role can read from the brief.

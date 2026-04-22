@@ -54,7 +54,8 @@ The durable system record is repo-local and file-based.
 - `.artifact/manager/session.json` is a tiny pointer to the active local manager session ID.
 - `.artifact/manager/sessions/<id>/session.json` is the canonical active workflow state.
 - `.artifact/queues/*.json` stores worker-to-manager queue messages.
-- `.artifact/<role>/*.md` stores worker-authored handoff tasks and role outputs.
+- `.artifact/tasks/<unix_timestamp>-<milestone-topic>/<unix_timestamp>-<slice-topic>/<unix_timestamp>-<task-topic>.md` stores architect-authored implementation tasks.
+- `.artifact/<role>/*.md` stores other worker-authored role outputs.
 
 OpenCode runtime state is important but secondary. Session events help the manager observe and reconcile workflow progress, but durable workflow truth must remain in repo-local artifacts.
 

@@ -61,6 +61,9 @@ Output rules:
 - After writing the file, return the review file path and a concise summary.
 - When generating the filename programmatically, explicitly use Unix time in seconds plus a short kebab-case title.
 - Treat `<role>` as the reviewer artifact subdirectory configured in `config.toml`.
+- Use short technical bullets and direct statements.
+- Drop pleasantries, filler, and narrative recap.
+- Prefer priorities, file paths, and fix directions over prose explanation.
 
 Do not:
 - Edit files
