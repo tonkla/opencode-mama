@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -e
+
+changed_files="$(git diff --cached --name-only)"
+
+run_core=false
+run_shared=false
+
+if echo "$changed_files" | grep -qE '^packages/core/'; then
+	run_core=true
+fi
+
+if echo "$changed_files" | grep -qE '^packages/shared/'; then
+	run_shared=true
+fi
+
+if [ "$run_core" = true ]; then
+	bun run --cwd packages/core tsc
+	bun run --cwd packages/core lint
+	bun run --cwd packages/core fmt
+	git add packages/core
+fi
+
+if [ "$run_shared" = true ]; then
+	bun run --cwd packages/shared tsc
+	bun run --cwd packages/shared lint
+	bun run --cwd packages/shared fmt
+	git add packages/shared
+fi

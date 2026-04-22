@@ -1,0 +1,110 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 100,
+	"semi": false,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"useTabs": true,
+	"sortImports": {
+		"newlinesBetween": false,
+		"customGroups": [
+			{
+				"groupName": "value-node-runtime",
+				"selector": "import",
+				"modifiers": [
+					"value"
+				],
+				"elementNamePattern": [
+					"node:*",
+					"node:**"
+				]
+			},
+			{
+				"groupName": "value-node-runtime-subpath",
+				"selector": "subpath",
+				"modifiers": [
+					"value"
+				],
+				"elementNamePattern": [
+					"node:*",
+					"node:**"
+				]
+			},
+			{
+				"groupName": "value-bun-runtime",
+				"selector": "import",
+				"modifiers": [
+					"value"
+				],
+				"elementNamePattern": [
+					"bun:*",
+					"bun:**"
+				]
+			},
+			{
+				"groupName": "type-node-runtime",
+				"selector": "import",
+				"modifiers": [
+					"type"
+				],
+				"elementNamePattern": [
+					"node:*",
+					"node:**"
+				]
+			},
+			{
+				"groupName": "type-node-runtime-subpath",
+				"selector": "subpath",
+				"modifiers": [
+					"type"
+				],
+				"elementNamePattern": [
+					"node:*",
+					"node:**"
+				]
+			},
+			{
+				"groupName": "type-bun-runtime",
+				"selector": "import",
+				"modifiers": [
+					"type"
+				],
+				"elementNamePattern": [
+					"bun:*",
+					"bun:**"
+				]
+			}
+		],
+		"groups": [
+			"value-node-runtime",
+			"value-node-runtime-subpath",
+			"value-bun-runtime",
+			"value-builtin",
+			"value-subpath",
+			"value-external",
+			[
+				"value-parent",
+				"value-sibling",
+				"value-index"
+			],
+			"value-internal",
+			"type-node-runtime",
+			"type-node-runtime-subpath",
+			"type-bun-runtime",
+			"type-import",
+			"type-subpath",
+			[
+				"type-parent",
+				"type-sibling",
+				"type-index"
+			],
+			"type-internal",
+			"unknown"
+		]
+	},
+	"sortPackageJson": true,
+	"ignorePatterns": [
+		"node_modules",
+		"*.md"
+	]
+}

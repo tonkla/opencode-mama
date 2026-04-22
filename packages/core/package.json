@@ -1,0 +1,14 @@
+{
+	"name": "@opencode-mama/core",
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"fmt": "oxfmt .",
+		"lint": "oxlint .",
+		"tsc": "tsc -p tsconfig.json --noEmit",
+		"test": "bun test"
+	},
+	"dependencies": {
+		"@opencode-mama/shared": "workspace:*"
+	}
+}
