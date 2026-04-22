@@ -136,8 +136,6 @@ Formatting rules:
 
 ## Repo write permissions
 
-In v1:
-
 - only `tester` and `coder` may modify the repo
 - all other roles should write only under `.artifact/`
 - `tester` owns writing or updating tests before implementation when tests are part of the task

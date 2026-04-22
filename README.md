@@ -29,20 +29,20 @@ The manager is the only control plane. Workers do not directly coordinate with e
 
 ## Built-in Roles
 
-V1 includes these built-in roles:
+Built-in roles:
 
-- manager
-- researcher
-- designer
-- architect
-- tester
-- coder
-- reviewer
-- committer
+- Manager
+- Researcher
+- Designer
+- Architect
+- Tester
+- Coder
+- Reviewer
+- Committer
 
 Typical delivery flow:
 
-- `researcher -> designer -> architect -> tester -> coder -> reviewer -> committer`
+- `Researcher -> Designer -> Architect -> Tester -> Coder -> Reviewer -> Committer`
 
 This is not a fixed pipeline. The manager may skip, repeat, or loop roles as needed.
 
@@ -78,59 +78,6 @@ Role model:
 - specialist roles are project subagents
 - built-in OpenCode primary agents such as `build` and `plan` remain untouched
 
-## Artifact Layout
-
-Repo-local artifacts are the durable workflow record.
-
-- `.artifact/manager/session.json` as a tiny pointer to the active local manager session ID
-- `.artifact/manager/sessions/<id>/session.json` as the canonical active workflow state
-- `.artifact/queues/*.json` for worker-to-manager queue messages
-- `.artifact/<role>/*.md` for worker-authored handoffs and role outputs
-
-Recommended format split:
-
-- use `.md` for handoff tasks and role-authored narrative outputs
-- use `.json` for machine-owned mutable state and queue/event messages
-- use `.toml` for human-owned configuration only
-
-## Why These Formats
-
-- Markdown is the best default for handoffs because it is compact, easy for agents to scan, and cheaper than forcing narrative instructions into JSON.
-- JSON is the best default for mutable machine state because it is easier to parse, validate, and rewrite safely.
-- TOML is best for stable human-edited config, not runtime workflow state.
-
-## Handoff Style
-
-Keep handoffs short and agent-first.
-
-Preferred structure:
-
-```md
-# <Task Title>
-
-## Goal
-- One or two bullets max.
-
-## Inputs
-- path to required file
-
-## Constraints
-- hard rule
-
-## Deliver
-- exact expected output
-
-## Done When
-- concrete completion condition
-```
-
-Guidelines:
-
-- prefer file paths over copied context
-- avoid long prose
-- use flat bullets
-- include only the next role’s task, not a full project recap
-
 ## Manager Control
 
 Select the `manager` agent in OpenCode to enter the manager workflow.
@@ -158,7 +105,7 @@ Expected behavior:
 
 ## Workflow Rules
 
-- one active top-level workflow per project in v1
+- one active top-level workflow per project
 - one OpenCode session per task
 - worker session titles follow `<role>: <task>`
 - worker-authored next-role handoffs are proposals only
@@ -168,8 +115,6 @@ Expected behavior:
 - OpenCode session events are used for observation and reconciliation, but repo-local artifacts remain the source of truth
 
 ## Repo Write Rules
-
-In v1:
 
 - only `tester` and `coder` may modify the repo
 - all other roles should write only artifact outputs under `.artifact/`

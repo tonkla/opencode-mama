@@ -44,7 +44,7 @@ Build a practical manager-led orchestration layer for OpenCode projects that nee
 - Worker session titles follow `<role>: <task>`.
 - Workers may propose next-role handoffs, but they do not route the next role directly.
 - The manager accepts or rejects worker-authored proposals in manager-owned state.
-- One top-level user request is active per project in v1.
+- One top-level user request is active per project.
 - Built-in OpenCode primary agents such as `build` and `plan` are left untouched.
 
 ## Source of Truth
@@ -60,7 +60,7 @@ OpenCode runtime state is important but secondary. Session events help the manag
 
 ## Roles
 
-Built-in roles in v1:
+Built-in roles:
 
 - manager
 - researcher
@@ -99,7 +99,7 @@ The `manager` agent is `mode: primary`. Specialists are `mode: subagent`.
 
 The manager writes canonical orchestration state under `.artifact/manager/`.
 
-At minimum, v1 maintains:
+At minimum, the manager state maintains:
 
 - `.artifact/manager/session.json`
 - `.artifact/manager/sessions/<id>/session.json`
@@ -132,8 +132,6 @@ Queues are for worker-to-manager communication, not manager-to-worker orchestrat
 
 ## Permissions and Boundaries
 
-In v1:
-
 - only `tester` and `coder` may modify the repo
 - all other roles write only artifact outputs under `.artifact/`
 - `tester` defines or updates tests before implementation when tests are part of the flow
@@ -149,7 +147,7 @@ Hard boundaries:
 
 ## State Machine
 
-The workflow states in v1 are:
+The workflow states are:
 
 - `new`
 - `routing`
@@ -180,8 +178,8 @@ The workflow states in v1 are:
 - Use the `manager` primary agent as the main entrypoint.
 - Use `/m new`, `/m resume`, `/m resume <id>`, `/m delete <id>`, `/m version`, and `/m help` as strict local manager control commands.
 - Refuse `/m new` when an unfinished active session already exists.
-- Keep built-in roles fixed in v1.
-- Keep one active top-level workflow per project in v1.
+- Keep built-in roles fixed.
+- Keep one active top-level workflow per project.
 
 ## Non-Goals
 
@@ -190,8 +188,8 @@ The workflow states in v1 are:
 - Redundant context copies as a convenience layer
 - Home-directory runtime state as the primary workflow protocol
 - Tmux scraping as the source of truth
-- Arbitrary project-defined role sets in v1
-- Multiple concurrent top-level workflows per project in v1
+- Arbitrary project-defined role sets
+- Multiple concurrent top-level workflows per project
 
 ## Guardrails
 
