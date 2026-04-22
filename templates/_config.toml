@@ -1,0 +1,46 @@
+title = "OpenCode's Multi-agent Orchestration and Management Plugin Configurations"
+
+[artifact]
+dir = ".artifact/"
+
+[agents]
+
+[agents.manager]
+provider = "go"
+model = "moonshotai/kimi-k2.6"
+dir = "manager"
+
+[agents.researcher]
+provider = "go"
+model = "qwen/qwen3.5-plus"
+dir = "researcher"
+
+[agents.designer]
+provider = "go"
+model = "z-ai/glm-5.1"
+dir = "designer"
+
+[agents.architect]
+provider = "go"
+model = "moonshotai/kimi-k2.6"
+dir = "architect"
+
+[agents.tester]
+provider = "go"
+model = "qwen/qwen3.5-plus"
+dir = "tester"
+
+[agents.coder]
+provider = "go"
+model = "qwen/qwen3.6-plus"
+dir = "coder"
+
+[agents.reviewer]
+provider = "go"
+model = "qwen/qwen3.5-plus"
+dir = "reviewer"
+
+[agents.committer]
+provider = "zen"
+model = "minimax/minimax-m2.5:free"
+dir = "committer"

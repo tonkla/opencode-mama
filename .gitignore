@@ -1,0 +1,10 @@
+.DS_Store
+
+.agents/
+.artifact/
+.opencode/
+
+node_modules/
+local/
+
+config.toml
