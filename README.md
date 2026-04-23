@@ -59,7 +59,7 @@ cd <project>
 opencode-mama uninstall
 ```
 
-`opencode-mama install` scaffolds the current project's `config.toml`, `.opencode/agents/`, `.opencode/commands/`, and `.opencode/skills/`.
+`opencode-mama install` scaffolds the current project's `config.toml`, `.opencode/agents/`, and `.opencode/skills/`.
 If a destination file already exists, the installer prompts for `Skip` or `Overwrite`.
 `opencode-mama uninstall` removes generated local `opencode-mama` files and preserves customized project files.
 After the project surface exists, reopen OpenCode and `manager` should appear in the agent switcher.
@@ -73,10 +73,11 @@ After installing the plugin in a project, select the `manager` agent in OpenCode
 - `config.toml` for per-role runtime settings
 - `PROJECT.md` for long-term project goals and architecture
 - `AGENTS.md` for repo-wide agent rules
-- role templates under `templates/_opencode/agents/` for behavior changes
+- role templates under `packages/installer/templates/_opencode/agents/` for behavior changes
 
 ## Notes
 
 - `opencode-mama` is designed around manager-mediated workflows.
 - The repo keeps workflow state in `.artifact/`.
 - Role behavior belongs in the OpenCode agent templates, not in human-facing documentation.
+- [Architecture](ARCHITECTURE.md)

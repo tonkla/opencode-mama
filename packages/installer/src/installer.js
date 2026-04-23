@@ -6,8 +6,7 @@ import {
 } from './project-surface.js'
 
 const PACKAGE_ROOT = dirname(dirname(fileURLToPath(import.meta.url)))
-const REPO_ROOT = dirname(dirname(PACKAGE_ROOT))
-const TEMPLATE_SOURCE_DIR = join(REPO_ROOT, 'templates')
+const TEMPLATE_SOURCE_DIR = join(PACKAGE_ROOT, 'templates')
 
 export async function installPlugin({ projectDir, options = {} }) {
 	const surface = await ensureProjectSurface(projectDir, options)

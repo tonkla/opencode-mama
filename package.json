@@ -8,7 +8,7 @@
   "files": [
     "README.md",
     "packages/installer",
-    "templates"
+    "packages/installer/templates"
   ],
   "workspaces": [
     "packages/*"
