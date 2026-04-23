@@ -67,7 +67,6 @@ Use repo-local artifacts as the system record:
 - `.artifact/manager/session.json` as a tiny pointer to the active local manager session ID
 - `.artifact/manager/sessions/<id>/session.json` as the canonical workflow state
 - `.artifact/queues/*.json` for worker-to-manager queue messages
-- `.artifact/tasks/<unix_timestamp>-<milestone-topic>/<unix_timestamp>-<slice-topic>/<unix_timestamp>-<task-topic>.md` for architect-authored implementation tasks
 - `.artifact/<role>/*.md` for other worker-authored role outputs
 
 ### File formats
@@ -94,46 +93,10 @@ Rationale:
 - Keep handoffs scoped to the next role's task only.
 - Do not include background that the next role can read directly from referenced files.
 
-## Handoff formatting
-
-For architect-authored implementation tasks under `.artifact/tasks/<unix_timestamp>-<milestone-topic>/<unix_timestamp>-<slice-topic>/<unix_timestamp>-<task-topic>.md`, prefer this compact structure:
-
-```md
-# Task: <short title>
-
-## Goal
-- One or two bullets max.
-
-## Inputs
-- `/abs/path/file`
-- `/abs/path/other-file`
-
-## Constraints
-- Required rule
-- Required rule
-
-## Deliver
-- Exact expected output
-
-## Done When
-- Concrete completion condition
-```
-
-Formatting rules:
-
-- Keep sections short.
-- Use bullets instead of paragraphs when possible.
-- Do not embed large copied code blocks unless the next role cannot access the source.
-- Prefer absolute or repo-root-relative paths consistently within a handoff.
-- Use explicit filenames, commands, and acceptance criteria.
-- Keep each task scoped to one concrete implementation problem.
-- Use milestone and slice directories to group related work without making the task file itself broad.
-
 ## Worker communication rules
 
 - Workers may write queue messages under `.artifact/queues/*.json` when they need to communicate with the manager.
 - Queue files are for worker-to-manager communication, not for manager-to-worker orchestration.
-- Architects may author implementation task proposals under `.artifact/tasks/...`.
 - Other workers may author role outputs under their role artifact directory.
 - Workers must not treat their own proposed handoff as accepted automatically.
 - Workers must wait for manager acknowledgement before assuming the next role is active.
