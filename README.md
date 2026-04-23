@@ -30,22 +30,40 @@ Do not adopt it if you want:
 
 ## Installation
 
-Globally:
+Install `opencode-mama`, then run its bootstrap command explicitly.
+
+Use a global install if you want the `opencode-mama` command available anywhere:
 
 ```bash
 bun install -g opencode-mama
 ```
 
-Locally:
+Then scaffold the current project:
 
 ```bash
-cd <project> && bun install opencode-mama
+cd <project>
+opencode-mama install
 ```
 
-Use Bun when you install with Bun, and Node when you install with npm/pnpm/yarn.
+Or install it as a project-local dependency:
 
-Global installs copy the plugin into `~/.config/opencode/plugins/`.
-Local project installs copy the plugin into `.opencode/plugins/`.
+```bash
+cd <project>
+bun install opencode-mama
+bun run opencode-mama install
+```
+
+Uninstall:
+
+```bash
+cd <project>
+opencode-mama uninstall
+```
+
+`opencode-mama install` scaffolds the current project's `config.toml`, `.opencode/agents/`, `.opencode/commands/`, and `.opencode/skills/`.
+If a destination file already exists, the installer prompts for `Skip` or `Overwrite`.
+`opencode-mama uninstall` removes generated local `opencode-mama` files and preserves customized project files.
+After the project surface exists, reopen OpenCode and `manager` should appear in the agent switcher.
 
 ## Usage
 

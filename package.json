@@ -1,8 +1,10 @@
 {
   "name": "opencode-mama",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
+  "bin": {
+    "opencode-mama": "./packages/installer/src/cli.js"
+  },
   "files": [
     "README.md",
     "packages/installer",
@@ -13,10 +15,9 @@
   ],
   "scripts": {
     "tsc": "bun run --filter '*' tsc",
-    "lint": "bun run --filter '*' lint",
-    "fmt": "bun run --filter '*' fmt",
+    "lint": "bun run --filter '*' lint && oxlint packages/installer",
+    "fmt": "bun run --filter '*' fmt && oxfmt packages/installer",
     "test": "bun test",
-    "postinstall": "sh packages/installer/scripts/postinstall.sh",
     "prepare": "husky"
   },
   "devDependencies": {
