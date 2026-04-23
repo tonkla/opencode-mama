@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "files": [
+    "README.md",
+    "packages/installer",
+    "templates"
+  ],
   "workspaces": [
     "packages/*"
   ],
@@ -11,6 +16,7 @@
     "lint": "bun run --filter '*' lint",
     "fmt": "bun run --filter '*' fmt",
     "test": "bun test",
+    "postinstall": "sh packages/installer/scripts/postinstall.sh",
     "prepare": "husky"
   },
   "devDependencies": {

@@ -28,7 +28,26 @@ Do not adopt it if you want:
 - loose, conversation-only coordination
 - multiple concurrent top-level workflows in one project
 
-## Human Usage
+## Installation
+
+Globally:
+
+```bash
+bun install -g opencode-mama
+```
+
+Locally:
+
+```bash
+cd <project> && bun install opencode-mama
+```
+
+Use Bun when you install with Bun, and Node when you install with npm/pnpm/yarn.
+
+Global installs copy the plugin into `~/.config/opencode/plugins/`.
+Local project installs copy the plugin into `.opencode/plugins/`.
+
+## Usage
 
 After installing the plugin in a project:
 

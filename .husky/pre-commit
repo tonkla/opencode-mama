@@ -4,10 +4,15 @@ set -e
 changed_files="$(git diff --cached --name-only)"
 
 run_core=false
+run_installer=false
 run_shared=false
 
 if echo "$changed_files" | grep -qE '^packages/core/'; then
 	run_core=true
+fi
+
+if echo "$changed_files" | grep -qE '^packages/installer/'; then
+	run_installer=true
 fi
 
 if echo "$changed_files" | grep -qE '^packages/shared/'; then
@@ -19,6 +24,12 @@ if [ "$run_core" = true ]; then
 	bun run --cwd packages/core lint
 	bun run --cwd packages/core fmt
 	git add packages/core
+fi
+
+if [ "$run_installer" = true ]; then
+	bun run --cwd packages/installer lint
+	bun run --cwd packages/installer fmt
+	git add packages/installer
 fi
 
 if [ "$run_shared" = true ]; then

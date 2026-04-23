@@ -1,0 +1,10 @@
+{
+	"name": "@opencode-mama/installer",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"fmt": "oxfmt .",
+		"lint": "oxlint .",
+		"test": "bun test"
+	}
+}
