@@ -5,7 +5,6 @@
 ## What It Gives You
 
 - a primary `manager` agent
-- a strict local `/m` control surface
 - specialist role templates for OpenCode agents
 - repo-local workflow state
 - manager-approved handoffs instead of direct worker-to-worker coordination
@@ -67,12 +66,7 @@ After the project surface exists, reopen OpenCode and `manager` should appear in
 
 ## Usage
 
-After installing the plugin in a project:
-
-1. Select the `manager` agent in OpenCode.
-2. Use `/m help` to see the local manager command surface.
-3. Use `/m new` to start a workflow, or `/m resume` to continue one.
-4. Use `/m version` when you need plugin version information.
+After installing the plugin in a project, select the `manager` agent in OpenCode and use the manager controls surfaced by the plugin.
 
 ## What To Customize
 

@@ -87,7 +87,6 @@ This is guidance, not a hard pipeline. The manager may skip, repeat, or loop rol
 `opencode-mama` is a project-local OpenCode integration surface.
 
 - Plugin code lives under `.opencode/plugins/`.
-- Local manager control lives under `.opencode/commands/m.md`.
 - Each role is a real project-scoped OpenCode agent under `.opencode/agents/<role>.md`.
 - Runtime settings live in `config.toml`.
 
@@ -175,10 +174,8 @@ The workflow states are:
 
 - Support OpenCode first and treat it as the manager UI.
 - Install as a project-local plugin under `.opencode/plugins/`.
-- Auto-scaffold missing built-in agent files and `.opencode/commands/m.md`.
 - Use the `manager` primary agent as the main entrypoint.
-- Use `/m new`, `/m resume`, `/m resume <id>`, `/m delete <id>`, `/m version`, and `/m help` as strict local manager control commands.
-- Refuse `/m new` when an unfinished active session already exists.
+- Refuse starting a new workflow when an unfinished active session already exists.
 - Keep built-in roles fixed.
 - Keep one active top-level workflow per project.
 

@@ -11,7 +11,6 @@ Read this file, `PROJECT.md`, and `config.toml` before making routing, design, o
 - `opencode-mama` is a project-scoped OpenCode plugin.
 - OpenCode is the primary UI for the manager role.
 - The user selects the `manager` agent directly from the OpenCode agent switcher.
-- `/m` is a strict local command surface available only in `manager` mode.
 - The manager is the only control plane between the user and workers.
 - Workers do not directly coordinate with each other.
 

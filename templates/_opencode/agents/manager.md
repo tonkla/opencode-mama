@@ -1,5 +1,5 @@
 ---
-description: Inspect project intent and manager workflow state, decide the next worker stage, and write canonical orchestration state under artifact.dir/manager/ for the plugin to apply after the manager session becomes idle.
+description: Multi-agent Orchestration and Management
 mode: primary
 temperature: 0.1
 permission:
